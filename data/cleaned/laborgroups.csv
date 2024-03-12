@@ -1,0 +1,33 @@
+LaborGroupID,Number,Description,LaborRateID,Activity
+1,12,Inbound Unloading,9,2
+2,2,Material Handling,19,4
+3,3,Saw Cut Labor,35,4
+9,1,Welding,8,4
+11,27,VS Blast,5,4
+13,7,Paint Labor,22,4
+18,66,Voortman System Cost,7,4
+20,9,VS Saw & Drill,12,4
+22,28,VS Coper Burn,13,4
+27,6,Plate Processing,21,4
+29,8,Fabrication,8,4
+30,10,Angle Line,25,4
+32,63,Project Management (shop allocation),26,4
+33,29,Camber Cold,27,4
+35,65,Estimating (shop allocation),29,4
+36,64,Procurement (shop allocation),28,4
+37,60,Detailing,2,1
+40,5,PL Press Brake,32,4
+41,62,Engineering - Checking,4,0
+43,30,Camber Hot,33,4
+44,33,Vertical Saw - Misc Metals,35,4
+45,57,Tube Plasma - Misc Metals,34,4
+46,58,Tube Bender - Misc Metals,36,4
+47,38,Fabrication - Misc Metals,8,4
+48,21,Voortman Paint Line,37,4
+49,22,Voortman Paint Line Handling,38,4
+50,61,Engineering,42,0
+51,9999,do not use Weld QC testing,8,4
+52,13,Parts Handling - small parts,19,4
+53,14,Outbound Loading,19,4
+54,15,VS Load,19,4
+55,16,QC,8,4
