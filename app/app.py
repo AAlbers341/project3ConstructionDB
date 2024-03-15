@@ -18,25 +18,25 @@ user = "postgres"
 password = "postgres"
 host = "localhost"
 port = "5432"
-database = "Construction_DB"
+database = "prj3_construction_db"
+schema= "OrderedTables"
 
 engine = create_engine(f"postgresql://{user}:{password}@{host}:{port}/{database}")
-
 
 # reflect an existing database into a new model
 Base = automap_base()
 
 # reflect the tables
-Base.prepare(autoload_with=engine)
+Base.prepare(autoload_with=engine, schema=schema)
 
 # Save references to each table
-estimateitems = Base.classes.EstimateItems
-laborgroups = Base.classes.LaborGroups
-shapes = Base.classes.Shapes
-estimates = Base.classes.Estimates
-sizes = Base.classes.Sizes
-laborrates = Base.classes.LaborRates
-grades = Base.classes.Grades
+estimateitems = Base.classes['07_EstimateItems']
+laborgroups = Base.classes['05_LaborGroups']
+shapes = Base.classes['01_Shapes']
+estimates = Base.classes['06_Estimates']
+sizes = Base.classes['02_Sizes']
+laborrates = Base.classes['04_LaborRates']
+grades = Base.classes['03_Grades']
 
 # Create session (link) from Python to the DB
 session = Session(engine)
@@ -60,16 +60,12 @@ def home():
 
 
 
-# @app.route("/api/v1.0/sizes")
-# def sizes():
-#     # Fetch results from sizes table
-#     session = Session(engine)
-
-#     count = session.query(func.count(sizes)).scalar()
-
-#     print("Number of records in Sizes table:", count)
-
-# session.close()
+@app.route("/api/v1.0/sizes")
+def sizes_route():
+    # Fetch results from sizes table
+    count = session.query(func.count(sizes)).scalar()
+    session.close()
+    return f"Number of records in Sizes table: {count}"
 
 
 
