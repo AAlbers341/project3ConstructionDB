@@ -63,7 +63,7 @@ def home():
         f"Available Routes:<br/>"
         f"/api/v1.0/labor_group_summary<br/>"
         f"/api/v1.0/material_summary<br/>"
-        f"/api/v1.0/<page><br/>"
+        f"/api/v1.0/paint_labor<br/>"
     )
 
 
@@ -149,19 +149,21 @@ def material_summary():
 session.close()
 
 
-@app.route("/api/v1.0/<page>")
-def page_summary(page):
+@app.route("/api/v1.0/paint_labor")
+def page_summary():
 
     # Create session to the DB
     session = Session(engine)
 
     # Query the database
     query_result = session.query(
-        grades.GradeID,
-        grades.Grade,
-        estimateitems.Page
-    ).join(estimateitems, grades.GradeID == estimateitems.GradeID)\
-     .filter(estimateitems.Page == page).all()
+        laborgroups.Description,
+        estimateitemlabor.ManHours,
+        estimateitems.SurfaceArea,
+        estimateitems.Finish
+    ).join(estimateitemlabor, laborgroups.LaborGroupID == estimateitemlabor.LaborGroupID)\
+     .join(estimateitems, estimateitemlabor.EstimateItemID == estimateitems.EstimateItemID)\
+     .filter(laborgroups.Description == "Paint Labor").all()
 
     # Close session with database
     session.close()
@@ -169,19 +171,15 @@ def page_summary(page):
     # Convert query result into JSON format
     summary_data = [
         {
-            "GradeID": row[0],
-            "Grade": row[1],
-            "Structure Type": row[2]
+            "Description": row[0],
+            "ManHours": row[1],
+            "SurfaceArea": row[2],
+            "Finish": row[3]
         } for row in query_result
     ]
 
     # Return the JSON data
     return jsonify(summary_data)
-
-# @app.route
-
-# @app.route
-
 
 
 if __name__ == "__main__":
