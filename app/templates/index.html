@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    >
+    <title>Construction Data</title>
+</head>
+<body>
+    
+    <h1>Construction Data</h1>
+    
+    <h2>HME, Inc<br/>
+    HAAS Metal Engineering<br/>
+    </h2>
+    <p>
+        Available Routes:<br/>
+        <!-- Link to labor group summary JSON data -->
+        <a href="#" id="labor_group_summary">Labor Group Summary JSON Data</a> - This data provides a summary for labor groups involved in processes in the shop for building the parts. It shows a labor rate and details the amount of work done in terms of hours and minutes. Additionally, it notes a percentage difference in hours worked, and identifies the labor group.<br/>
+        <!-- Link to material summary JSON data -->
+        <a href="#" id="material_summary">Material Summary JSON Data</a> - The data provides details about a material used in a project, including its cost, quantity, and weight. It also includes identifiers such as the estimate ID and labor group ID for tracking and organization purposes. Material drop is how much is left over.<br/>
+        <!-- Link to paint labor JSON data -->
+        <a href="#" id="paint_labor">Paint Labor JSON Data</a> - The JSON data presents information related to paint labor, detailing aspects such as the description, the type of finish, the amount of labor required in man-hours, and the surface area to be covered.
+    </p>
+    
+    <hr>
+    <!-- Container div where JSON data displayed -->
+    <div id="jsonOutput"></div>
+
+    <!-- Link to jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        // jQuery document ready function to ensure code runs after document is loaded
+        $(document).ready(function(){
+            // Attaches click event handler to labor group summary link
+            $('#labor_group_summary').click(function(e) {
+                e.preventDefault(); // Prevents default action of link
+                loadJSONData('/api/v1.0/labor_group_summary'); // Calls function to load JSON data
+            });
+
+            // Attaches click event handler to material summary link
+            $('#material_summary').click(function(e) {
+                e.preventDefault(); 
+                loadJSONData('/api/v1.0/material_summary'); 
+            });
+
+            // Attaches click event handler to paint labor link
+            $('#paint_labor').click(function(e) {
+                e.preventDefault(); 
+                loadJSONData('/api/v1.0/paint_labor'); 
+            });
+
+            // Function to load JSON data from specified route
+            function loadJSONData(route) {
+                $.ajax({
+                    url: route, // URL where request is sent
+                    type: "GET", // type of request being made (GET to retrieve data)
+                    success: function(response) {
+                        // Function to execute if request succeeds, displaying JSON data formatted
+                        $('#jsonOutput').html('<pre>' + JSON.stringify(response, null, 2) + '</pre>');
+                    },
+                });
+            }
+        });
+    </script>
+</body>
+</html>
