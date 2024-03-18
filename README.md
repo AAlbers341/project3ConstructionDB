@@ -1,7 +1,7 @@
 # Structural Steel Fabrication Estimation DB
 
 ## Purpose
-The Structural Steel Fabrication Estimation DB is designed to enhance the bid-winning process for businesses relying on project bids. By analyzing past estimating data, this tool aims to improve win percentages and overall profitability. It extracts data from estimating software, transforms it into easily readable information, and provides quick verification of estimate accuracy.
+The Structural Steel Fabrication Estimation DB enhances the bid-winning process for businesses relying on project bids. By analyzing past estimating data, this tool aims to improve win percentages and overall profitability. It extracts data from estimating software, transforms it into easily readable information, and provides quick verification of estimate accuracy.
 
 ## Key Objectives
 - Extract, Transform, and Load steel fabrication data
@@ -24,14 +24,9 @@ The Structural Steel Fabrication Estimation DB is designed to enhance the bid-wi
 ## Tech Stack
 - Pandas
 - SQLAlchemy
-- Autobase_map
-- Session
-- Func
-- Create_engine
 - Psycopg2
 - PostgreSQL
 - jQuery 
-- AJAX
 
 ## Data Sources
 - Estimate Item Labor Groups
@@ -44,13 +39,13 @@ The Structural Steel Fabrication Estimation DB is designed to enhance the bid-wi
 - Sizes
 
 ## PostgreSQL
-[Link to PostgreSQL Documentation](https://www.postgresql.org/docs/)
+PostgreSQL was selected for its inherent flexibility and support for predefined schemas, enabling seamless integration and execution across multiple tables. This strategic choice facilitates efficient data management and analysis, allowing for complex operations such as joins and queries to be performed with precision and reliability.
 
 ## ERD
-[Insert link to ERD]
+![ERD Diagram](https://github.com/AAlbers341/project3ConstructionDB/assets/149892097/ccaa9350-76e1-4aae-9716-e0cd703855b4)
 
 ## Table Schema
-[Insert table schema here]
+[Link to table schema for table and data upload](https://github.com/AAlbers341/project3ConstructionDB/blob/main/ERD/CleanedData_ERD_Diagram.png)
 
 ## Flask App
 
@@ -65,21 +60,18 @@ The Structural Steel Fabrication Estimation DB is designed to enhance the bid-wi
 ## References
 1. **Development with Flask, SQLAlchemy, and psycopg2**
    
-   **Using SQLAlchemy:**
-   [SQLAlchemy 2.0 Documentation](https://docs.sqlalchemy.org/en/20/)
-   
-   **Using psycopg2:**
-   [Psycopg 2.9.9 documentation](https://www.psycopg.org/docs/)
+   - [SQLAlchemy 2.0 Documentation](https://docs.sqlalchemy.org/en/20/)
+   - [Psycopg 2.9.9 documentation](https://www.psycopg.org/docs/)
 
 2. **JavaScript and jQuery**
 
    - **AJAX Requests**: Script listens for clicks on summary links and makes AJAX GET requests to Flask API routes.
-   
    - **Data Display**: Fetched JSON data is formatted and displayed within the `#jsonOutput` div.
 
 3. **Interacting with the Front-end API**
 
    Users can interact with the API by clicking on the provided links in the web interface. Each link triggers an AJAX request to the corresponding Flask API endpoint, dynamically fetching and displaying the summary data.
+
 ## Links
    - [SQLAlchemy 2.0.28](https://pypi.org/project/SQLAlchemy/)
    - [Flask-SQLAlchemy](https://flask-sqlalchemy.palletsprojects.com/en/3.1.x/)
