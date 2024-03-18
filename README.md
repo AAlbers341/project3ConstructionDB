@@ -30,8 +30,11 @@ The Structural Steel Fabrication Estimation DB enhances the bid-winning process 
 
 ## Data Sources
 - [Estimate Item Labor Groups](https://github.com/AAlbers341/project3ConstructionDB/blob/main/data/cleaned/estimateitemlaborgroups.csv)
+  - Labor hours for each labor group.
 - [Estimate Items](https://github.com/AAlbers341/project3ConstructionDB/blob/main/data/cleaned/estimateitems.csv)
+  - Describes each meterial selected for each part. 
 - [Estimates](https://github.com/AAlbers341/project3ConstructionDB/blob/main/data/cleaned/estimates.csv)
+  - Describes information identifying the estimate such as jobname, estimate ID, customer etc.
 - [Grades](https://github.com/AAlbers341/project3ConstructionDB/blob/main/data/cleaned/grades.csv)
   - Describes the types of grades for all material shapes and sizes used within the estimate.
 - [Labor Groups](https://github.com/AAlbers341/project3ConstructionDB/blob/main/data/cleaned/laborgroups.csv)
