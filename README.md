@@ -18,6 +18,7 @@ The Structural Steel Fabrication Estimation DB enhances the bid-winning process 
 5. [Table Schema](#table-schema)
 6. [Flask App](#flask-app)
 7. [References](#references)
+8. [Data Ethics](#data-ethics)
 
 ---
 
@@ -85,3 +86,6 @@ PostgreSQL was selected for its inherent flexibility and support for predefined 
    - [Flask-SQLAlchemy](https://flask-sqlalchemy.palletsprojects.com/en/3.1.x/)
    - [SQLAlchemy](https://www.sqlalchemy.org/)
    - [psycopg2 2.9.9](https://pypi.org/project/psycopg2/)
+
+## Data Ethics
+In the realm of data ethics, securing consent before utilizing financial data is paramount. In the case of HME, Inc, gaining explicit consent from stakeholders ensures transparency and upholds principles of data privacy and integrity. By obtaining consent, HME, Inc demonstrates respect for individuals' autonomy over their data, fostering trust and accountability. This practice not only aligns with legal regulations such as GDPR but also reflects ethical responsibility towards data subjects. Moreover, informed consent empowers stakeholders by providing them with agency over how their financial data is used, promoting a culture of ethical data governance within Bubblebee and safeguarding against potential misuse or exploitation of sensitive information.
